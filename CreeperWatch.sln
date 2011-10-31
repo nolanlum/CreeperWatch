@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreeperWatch", "CreeperWatch\CreeperWatch.csproj", "{40BB1428-E216-451B-B66D-CE0BEFBF1726}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF790A2F-3C06-4C1D-B9F0-2DCFCD6453EA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40BB1428-E216-451B-B66D-CE0BEFBF1726}.Debug|x86.ActiveCfg = Debug|x86
+		{40BB1428-E216-451B-B66D-CE0BEFBF1726}.Debug|x86.Build.0 = Debug|x86
+		{40BB1428-E216-451B-B66D-CE0BEFBF1726}.Release|x86.ActiveCfg = Release|x86
+		{40BB1428-E216-451B-B66D-CE0BEFBF1726}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
