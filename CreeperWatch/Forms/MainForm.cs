@@ -11,10 +11,19 @@ namespace CreeperWatch
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+		private MineAdmin backend;
+
+        public MainForm(MineAdmin backend)
         {
+			this.backend = backend;
+
             InitializeComponent();
         }
+
+		private void mnuExit_Click(object sender, EventArgs e)
+		{
+			Application.ExitThread();
+		}
 
     }
 }
