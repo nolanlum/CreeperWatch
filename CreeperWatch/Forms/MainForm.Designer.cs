@@ -1,4 +1,4 @@
-﻿namespace CreeperWatch
+﻿namespace CreeperWatch.Forms
 {
     partial class MainForm
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("CreeperWatch");
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("CreeperWatch");
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.mnuFileMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +36,9 @@
 			this.mnuAddServer = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuDisconnectServer = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuRemoveServer = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuHelpMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.nothingHereButUsChickensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusStrip = new System.Windows.Forms.StatusStrip();
 			this.lblBotStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			this.botProgress = new System.Windows.Forms.ToolStripProgressBar();
@@ -47,13 +49,14 @@
 			this.ActionTab = new System.Windows.Forms.TabPage();
 			this.ConsoleTab = new System.Windows.Forms.TabPage();
 			this.removeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuRemoveServer = new System.Windows.Forms.ToolStripMenuItem();
-			this.nothingHereButUsChickensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.txtConsole = new System.Windows.Forms.TextBox();
+			this.txtConsoleInput = new System.Windows.Forms.TextBox();
 			this.MainMenu.SuspendLayout();
 			this.ViewContainer.Panel1.SuspendLayout();
 			this.ViewContainer.Panel2.SuspendLayout();
 			this.ViewContainer.SuspendLayout();
 			this.ServerTabs.SuspendLayout();
+			this.ConsoleTab.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -80,8 +83,8 @@
 			// 
 			this.mnuExit.Name = "mnuExit";
 			this.mnuExit.ShortcutKeyDisplayString = "";
-			this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-			this.mnuExit.Size = new System.Drawing.Size(152, 22);
+			this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+			this.mnuExit.Size = new System.Drawing.Size(134, 22);
 			this.mnuExit.Text = "E&xit";
 			this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
 			// 
@@ -116,6 +119,15 @@
 			this.mnuDisconnectServer.Size = new System.Drawing.Size(184, 38);
 			this.mnuDisconnectServer.Text = "&Disconnect Server";
 			// 
+			// mnuRemoveServer
+			// 
+			this.mnuRemoveServer.AutoSize = false;
+			this.mnuRemoveServer.Image = global::CreeperWatch.Properties.Resources.Minus_Red_Button;
+			this.mnuRemoveServer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.mnuRemoveServer.Name = "mnuRemoveServer";
+			this.mnuRemoveServer.Size = new System.Drawing.Size(184, 38);
+			this.mnuRemoveServer.Text = "D&elete Server";
+			// 
 			// mnuHelpMenu
 			// 
 			this.mnuHelpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -123,6 +135,12 @@
 			this.mnuHelpMenu.Name = "mnuHelpMenu";
 			this.mnuHelpMenu.Size = new System.Drawing.Size(44, 20);
 			this.mnuHelpMenu.Text = "&Help";
+			// 
+			// nothingHereButUsChickensToolStripMenuItem
+			// 
+			this.nothingHereButUsChickensToolStripMenuItem.Name = "nothingHereButUsChickensToolStripMenuItem";
+			this.nothingHereButUsChickensToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+			this.nothingHereButUsChickensToolStripMenuItem.Text = "Nothing here but us chickens!";
 			// 
 			// StatusStrip
 			// 
@@ -147,9 +165,9 @@
 			// 
 			// ViewContainer
 			// 
-			this.ViewContainer.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ViewContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ViewContainer.Location = new System.Drawing.Point(0, 24);
 			this.ViewContainer.Name = "ViewContainer";
 			// 
@@ -166,23 +184,23 @@
 			// 
 			// tvServers
 			// 
-			this.tvServers.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.tvServers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tvServers.Location = new System.Drawing.Point(3, 3);
 			this.tvServers.Name = "tvServers";
-			treeNode5.Name = "CreeperWatch";
-			treeNode5.Text = "CreeperWatch";
+			treeNode1.Name = "CreeperWatch";
+			treeNode1.Text = "CreeperWatch";
 			this.tvServers.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode1});
 			this.tvServers.Size = new System.Drawing.Size(260, 548);
 			this.tvServers.TabIndex = 0;
 			// 
 			// ServerTabs
 			// 
-			this.ServerTabs.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ServerTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ServerTabs.Controls.Add(this.InfoTab);
 			this.ServerTabs.Controls.Add(this.ActionTab);
 			this.ServerTabs.Controls.Add(this.ConsoleTab);
@@ -214,6 +232,8 @@
 			// 
 			// ConsoleTab
 			// 
+			this.ConsoleTab.Controls.Add(this.txtConsoleInput);
+			this.ConsoleTab.Controls.Add(this.txtConsole);
 			this.ConsoleTab.Location = new System.Drawing.Point(4, 22);
 			this.ConsoleTab.Name = "ConsoleTab";
 			this.ConsoleTab.Size = new System.Drawing.Size(516, 522);
@@ -227,20 +247,32 @@
 			this.removeServerToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
 			this.removeServerToolStripMenuItem.Text = "Remove Server";
 			// 
-			// mnuRemoveServer
+			// txtConsole
 			// 
-			this.mnuRemoveServer.AutoSize = false;
-			this.mnuRemoveServer.Image = global::CreeperWatch.Properties.Resources.Minus_Red_Button;
-			this.mnuRemoveServer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this.mnuRemoveServer.Name = "mnuRemoveServer";
-			this.mnuRemoveServer.Size = new System.Drawing.Size(184, 38);
-			this.mnuRemoveServer.Text = "D&elete Server";
+			this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtConsole.BackColor = System.Drawing.SystemColors.Window;
+			this.txtConsole.Cursor = System.Windows.Forms.Cursors.Default;
+			this.txtConsole.Enabled = false;
+			this.txtConsole.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtConsole.Location = new System.Drawing.Point(3, 3);
+			this.txtConsole.Multiline = true;
+			this.txtConsole.Name = "txtConsole";
+			this.txtConsole.ReadOnly = true;
+			this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.txtConsole.Size = new System.Drawing.Size(510, 490);
+			this.txtConsole.TabIndex = 0;
+			this.txtConsole.Text = "[INFO] Lorem ipsum.";
 			// 
-			// nothingHereButUsChickensToolStripMenuItem
+			// txtConsoleInput
 			// 
-			this.nothingHereButUsChickensToolStripMenuItem.Name = "nothingHereButUsChickensToolStripMenuItem";
-			this.nothingHereButUsChickensToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-			this.nothingHereButUsChickensToolStripMenuItem.Text = "Nothing here but us chickens!";
+			this.txtConsoleInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtConsoleInput.Location = new System.Drawing.Point(3, 499);
+			this.txtConsoleInput.Name = "txtConsoleInput";
+			this.txtConsoleInput.Size = new System.Drawing.Size(510, 20);
+			this.txtConsoleInput.TabIndex = 1;
 			// 
 			// MainForm
 			// 
@@ -260,6 +292,8 @@
 			this.ViewContainer.Panel2.ResumeLayout(false);
 			this.ViewContainer.ResumeLayout(false);
 			this.ServerTabs.ResumeLayout(false);
+			this.ConsoleTab.ResumeLayout(false);
+			this.ConsoleTab.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -287,6 +321,8 @@
 		private System.Windows.Forms.ToolStripMenuItem removeServerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem mnuRemoveServer;
 		private System.Windows.Forms.ToolStripMenuItem nothingHereButUsChickensToolStripMenuItem;
+		private System.Windows.Forms.TextBox txtConsoleInput;
+		private System.Windows.Forms.TextBox txtConsole;
     }
 }
 

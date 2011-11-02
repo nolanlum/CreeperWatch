@@ -6,16 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
-namespace CreeperWatch
+namespace CreeperWatch.Forms
 {
     public partial class MainForm : Form
     {
 		private MineAdmin backend;
 
+		public Queue<KeyValuePair<MineAction, object[]>> EventQueue { get; private set; }
+		public EventWaitHandle EventHandle { get; private set; }
+
         public MainForm(MineAdmin backend)
         {
 			this.backend = backend;
+			this.EventQueue = new Queue<KeyValuePair<MineAction, object[]>>();
+			this.EventHandle = new ManualResetEvent(false);
 
             InitializeComponent();
         }
