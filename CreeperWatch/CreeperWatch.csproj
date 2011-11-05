@@ -51,6 +51,9 @@
   <PropertyGroup>
     <StartupObject>CreeperWatch.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\minekarft.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -119,6 +122,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Add.png" />
+    <Content Include="Resources\minekarft.ico" />
+    <Content Include="Resources\minekarft.png" />
+    <Content Include="Resources\minekarftgreenboi.png" />
+    <Content Include="Resources\minekarftredyo.png" />
+    <Content Include="Resources\minekarftyella.png" />
     <Content Include="Resources\Minus Red Button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

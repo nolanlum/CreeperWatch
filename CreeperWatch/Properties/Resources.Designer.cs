@@ -67,6 +67,41 @@ namespace CreeperWatch.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap minekarft {
+            get {
+                object obj = ResourceManager.GetObject("minekarft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap minekarftgreenboi {
+            get {
+                object obj = ResourceManager.GetObject("minekarftgreenboi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon minekarftIcon {
+            get {
+                object obj = ResourceManager.GetObject("minekarftIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap minekarftredyo {
+            get {
+                object obj = ResourceManager.GetObject("minekarftredyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap minekarftyella {
+            get {
+                object obj = ResourceManager.GetObject("minekarftyella", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Minus_Red_Button {
             get {
                 object obj = ResourceManager.GetObject("Minus_Red_Button", resourceCulture);
