@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEditServerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditServerDialog.Designer.cs">
+      <DependentUpon>AddEditServerDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MineAdmin.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="RCONProtocol.cs" />
+    <EmbeddedResource Include="Forms\AddEditServerDialog.resx">
+      <DependentUpon>AddEditServerDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
