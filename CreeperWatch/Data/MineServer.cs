@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 
 namespace CreeperWatch.Data {
-	class MineServer
+	public class MineServer
 	{
 		private HashSet<string> userList;
 
 		private RCONProtocol servConn;
+
+		public Guid GUID { get; private set; }
 
 		public string Name { get; set; }
 		public string Address { get; set; }
@@ -21,11 +23,14 @@ namespace CreeperWatch.Data {
 			get { return this.userList.ToList(); }
 		}
 
-		public MineServer(string name, int port, string pass)
+		public MineServer(string name, string address, int port, string pass, Guid guid)
 		{
 			this.Name = name;
+			this.Address = address;
 			this.Port = port;
 			this.RconPassword = pass;
+
+			this.GUID = guid == Guid.Empty ? Guid.NewGuid() : guid;
 
 			this.userList = new HashSet<string>();
 		}
@@ -51,6 +56,28 @@ namespace CreeperWatch.Data {
 			}
 
 			return added;
+		}
+
+		public override string ToString()
+		{
+			return string.Format("{0},{1},{2},{3},{4}", this.GUID, this.Name, this.Address, this.Port, this.RconPassword);
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (object.ReferenceEquals(this, obj))
+				return true;
+			if (object.ReferenceEquals(obj, null))
+				return false;
+			if (!(obj is MineServer))
+				return false;
+
+			return ((MineServer) obj).GUID == this.GUID;
+		}
+
+		public override int GetHashCode()
+		{
+			return this.GUID.GetHashCode();
 		}
 	}
 }

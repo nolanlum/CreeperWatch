@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("CreeperWatch");
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("CreeperWatch");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.mnuFileMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,11 @@
 			this.txtConsoleInput = new System.Windows.Forms.TextBox();
 			this.txtConsole = new System.Windows.Forms.TextBox();
 			this.removeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ctxServer = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.ctxMnuEditServer = new System.Windows.Forms.ToolStripMenuItem();
+			this.ctxMnuRemoveServer = new System.Windows.Forms.ToolStripMenuItem();
+			this.ctxMnuDisConnect = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.MainMenu.SuspendLayout();
 			this.ViewContainer.Panel1.SuspendLayout();
 			this.ViewContainer.Panel2.SuspendLayout();
@@ -73,6 +78,7 @@
 			this.ServerTabs.SuspendLayout();
 			this.InfoTab.SuspendLayout();
 			this.ConsoleTab.SuspendLayout();
+			this.ctxServer.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -99,7 +105,7 @@
 			// 
 			this.mnuExit.Name = "mnuExit";
 			this.mnuExit.ShortcutKeyDisplayString = "";
-			this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+			this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
 			this.mnuExit.Size = new System.Drawing.Size(134, 22);
 			this.mnuExit.Text = "E&xit";
 			this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
@@ -122,6 +128,7 @@
 			this.mnuAddServer.Name = "mnuAddServer";
 			this.mnuAddServer.Size = new System.Drawing.Size(184, 38);
 			this.mnuAddServer.Text = "&Add Server";
+			this.mnuAddServer.Click += new System.EventHandler(this.mnuAddServer_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -181,9 +188,9 @@
 			// 
 			// ViewContainer
 			// 
-			this.ViewContainer.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ViewContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ViewContainer.Location = new System.Drawing.Point(0, 24);
 			this.ViewContainer.Name = "ViewContainer";
 			// 
@@ -200,24 +207,24 @@
 			// 
 			// tvServers
 			// 
-			this.tvServers.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.tvServers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tvServers.ImageIndex = 0;
 			this.tvServers.ImageList = this.treeImgList;
 			this.tvServers.Location = new System.Drawing.Point(3, 3);
 			this.tvServers.Name = "tvServers";
-			treeNode2.Name = "CreeperWatch";
-			treeNode2.Text = "CreeperWatch";
+			treeNode1.Name = "CreeperWatch";
+			treeNode1.Text = "CreeperWatch";
 			this.tvServers.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
 			this.tvServers.SelectedImageIndex = 0;
 			this.tvServers.Size = new System.Drawing.Size(260, 548);
 			this.tvServers.TabIndex = 0;
 			// 
 			// treeImgList
 			// 
-			this.treeImgList.ImageStream = ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("treeImgList.ImageStream")));
+			this.treeImgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("treeImgList.ImageStream")));
 			this.treeImgList.TransparentColor = System.Drawing.Color.Transparent;
 			this.treeImgList.Images.SetKeyName(0, "minekarft.png");
 			this.treeImgList.Images.SetKeyName(1, "minekarftgreenboi.png");
@@ -226,9 +233,9 @@
 			// 
 			// ServerTabs
 			// 
-			this.ServerTabs.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ServerTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ServerTabs.Controls.Add(this.InfoTab);
 			this.ServerTabs.Controls.Add(this.ActionTab);
 			this.ServerTabs.Controls.Add(this.ConsoleTab);
@@ -326,7 +333,7 @@
 			// 
 			// lstPlayerList
 			// 
-			this.lstPlayerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.lstPlayerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lstPlayerList.FormattingEnabled = true;
 			this.lstPlayerList.ItemHeight = 16;
 			this.lstPlayerList.Location = new System.Drawing.Point(6, 180);
@@ -336,8 +343,8 @@
 			// 
 			// lblAddress
 			// 
-			this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblAddress.Location = new System.Drawing.Point(74, 38);
 			this.lblAddress.Name = "lblAddress";
 			this.lblAddress.Size = new System.Drawing.Size(436, 16);
@@ -346,7 +353,7 @@
 			// 
 			// label2
 			// 
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(6, 38);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(65, 16);
@@ -356,8 +363,8 @@
 			// 
 			// lblName
 			// 
-			this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblName.Location = new System.Drawing.Point(74, 12);
 			this.lblName.Name = "lblName";
 			this.lblName.Size = new System.Drawing.Size(436, 16);
@@ -366,7 +373,7 @@
 			// 
 			// label1
 			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(6, 12);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(51, 16);
@@ -396,8 +403,8 @@
 			// 
 			// txtConsoleInput
 			// 
-			this.txtConsoleInput.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtConsoleInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtConsoleInput.Location = new System.Drawing.Point(3, 499);
 			this.txtConsoleInput.Name = "txtConsoleInput";
 			this.txtConsoleInput.Size = new System.Drawing.Size(510, 20);
@@ -405,13 +412,13 @@
 			// 
 			// txtConsole
 			// 
-			this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtConsole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtConsole.BackColor = System.Drawing.SystemColors.Window;
 			this.txtConsole.Cursor = System.Windows.Forms.Cursors.Default;
 			this.txtConsole.Enabled = false;
-			this.txtConsole.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.txtConsole.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtConsole.Location = new System.Drawing.Point(3, 3);
 			this.txtConsole.Multiline = true;
 			this.txtConsole.Name = "txtConsole";
@@ -426,6 +433,39 @@
 			this.removeServerToolStripMenuItem.Name = "removeServerToolStripMenuItem";
 			this.removeServerToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
 			this.removeServerToolStripMenuItem.Text = "Remove Server";
+			// 
+			// ctxServer
+			// 
+			this.ctxServer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxMnuDisConnect,
+            this.toolStripSeparator2,
+            this.ctxMnuEditServer,
+            this.ctxMnuRemoveServer});
+			this.ctxServer.Name = "ctxServer";
+			this.ctxServer.Size = new System.Drawing.Size(134, 76);
+			// 
+			// ctxMnuEditServer
+			// 
+			this.ctxMnuEditServer.Name = "ctxMnuEditServer";
+			this.ctxMnuEditServer.Size = new System.Drawing.Size(133, 22);
+			this.ctxMnuEditServer.Text = "Edit";
+			// 
+			// ctxMnuRemoveServer
+			// 
+			this.ctxMnuRemoveServer.Name = "ctxMnuRemoveServer";
+			this.ctxMnuRemoveServer.Size = new System.Drawing.Size(133, 22);
+			this.ctxMnuRemoveServer.Text = "Remove";
+			// 
+			// ctxMnuDisConnect
+			// 
+			this.ctxMnuDisConnect.Name = "ctxMnuDisConnect";
+			this.ctxMnuDisConnect.Size = new System.Drawing.Size(133, 22);
+			this.ctxMnuDisConnect.Text = "Disconnect";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(130, 6);
 			// 
 			// MainForm
 			// 
@@ -449,6 +489,7 @@
 			this.InfoTab.ResumeLayout(false);
 			this.ConsoleTab.ResumeLayout(false);
 			this.ConsoleTab.PerformLayout();
+			this.ctxServer.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -491,6 +532,11 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ContextMenuStrip ctxServer;
+		private System.Windows.Forms.ToolStripMenuItem ctxMnuDisConnect;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripMenuItem ctxMnuEditServer;
+		private System.Windows.Forms.ToolStripMenuItem ctxMnuRemoveServer;
     }
 }
 

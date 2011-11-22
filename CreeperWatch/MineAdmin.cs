@@ -11,7 +11,7 @@ namespace CreeperWatch
 {
 	public class MineAdmin
 	{
-		private List<MineServer> servers;
+		private Dictionary<Guid, MineServer> servers;
 
 		private MainForm view;
 		private Thread uiThread;
@@ -20,17 +20,28 @@ namespace CreeperWatch
 		{
 			// Parsing CSV values like no tomorrow.
 			string[] split = Properties.Settings.Default.ServerStrings.Split(',');
-			this.servers = new List<MineServer>();
+			this.servers = new Dictionary<Guid, MineServer>();
 
-			for (int i = 0; i < split.Length; i += 3)
+			for (int i = 0; i < split.Length; i += 5)
 			{
-				if (i + 2 >= split.Length) return; // wut. I didn't save data like this.
-				
-				this.servers.Add(new MineServer(split[i], int.Parse(split[i + 1]), split[i + 2]));
+				if (i + 4 >= split.Length) return; // wut. I didn't save data like this.
+
+				try
+				{
+					var id = new Guid(split[i]);
+					var s = new MineServer(split[i + 1], split[1 + 2], int.Parse(split[i + 3]), split[i + 4], id);
+
+					this.servers.Add(id, s);
+				}
+				catch (Exception)
+				{
+					continue;
+				}
 			}
 		}
 
-		public void Loop() {
+		public void Loop()
+		{
 			this.view = new MainForm(this);
 			this.uiThread = new Thread((ThreadStart) delegate
 			{
@@ -39,8 +50,9 @@ namespace CreeperWatch
 				Application.Run(this.view);
 			});
 			this.uiThread.SetApartmentState(ApartmentState.STA);
-			
+
 			this.uiThread.Start();
+
 			while (this.uiThread.IsAlive)
 			{
 				while (this.view.EventQueue.Count > 0)
@@ -50,8 +62,10 @@ namespace CreeperWatch
 				}
 
 				this.view.EventHandle.Reset();
-				this.view.EventHandle.WaitOne(2000);
+				this.view.EventHandle.WaitOne(1000);
 			}
+
+			this.saveServerList();
 		}
 
 		public void ServerDataReceived(string str1, string str2)
@@ -62,11 +76,47 @@ namespace CreeperWatch
 		{
 		}
 
+		private void saveServerList()
+		{
+			var sb = new StringBuilder();
+
+			lock (this.servers)
+			{
+				foreach (var s in this.servers)
+					sb.Append(s.Value.ToString()).Append(',');
+			}
+
+			Properties.Settings.Default.ServerStrings = sb.ToString().TrimEnd(',');
+			Properties.Settings.Default.Save();
+		}
+
 		private void doEvent(MineAction ev, object[] args)
 		{
 			switch (ev)
 			{
+				case MineAction.ACTION_UI_LOAD:
+					this.view.Invoke(new Action(delegate { this.view.UpdateServerList(this.servers); }));
+					return;
+
 				case MineAction.ACTION_SEND_RAW:
+					return;
+
+				case MineAction.ACTION_ADD_SERVER:
+					string name = (string) args[0],
+						address = (string) args[1],
+						password = (string) args[2];
+					int port = (int) args[3];
+
+					MineServer s = new MineServer(name, address, port, password, Guid.Empty);
+
+					lock (this.servers)
+					{
+						this.servers.Add(s.GUID, s);
+					}
+
+					this.saveServerList();
+					this.view.Invoke(new Action(delegate { this.view.UpdateServerList(this.servers); }));
+
 					return;
 			}
 		}
@@ -74,6 +124,9 @@ namespace CreeperWatch
 
 	public enum MineAction
 	{
-		ACTION_SEND_RAW
+		ACTION_SEND_RAW,
+		ACTION_ADD_SERVER,
+
+		ACTION_UI_LOAD,
 	};
 }
