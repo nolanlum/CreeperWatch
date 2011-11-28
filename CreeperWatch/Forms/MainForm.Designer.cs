@@ -67,10 +67,10 @@
 			this.txtConsole = new System.Windows.Forms.TextBox();
 			this.removeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ctxServer = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.ctxMnuEditServer = new System.Windows.Forms.ToolStripMenuItem();
-			this.ctxMnuRemoveServer = new System.Windows.Forms.ToolStripMenuItem();
 			this.ctxMnuDisConnect = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.ctxMnuEditServer = new System.Windows.Forms.ToolStripMenuItem();
+			this.ctxMnuRemoveServer = new System.Windows.Forms.ToolStripMenuItem();
 			this.MainMenu.SuspendLayout();
 			this.ViewContainer.Panel1.SuspendLayout();
 			this.ViewContainer.Panel2.SuspendLayout();
@@ -89,7 +89,7 @@
             this.mnuHelpMenu});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
-			this.MainMenu.Size = new System.Drawing.Size(800, 24);
+			this.MainMenu.Size = new System.Drawing.Size(794, 24);
 			this.MainMenu.TabIndex = 0;
 			this.MainMenu.Text = "menuStrip1";
 			// 
@@ -168,9 +168,9 @@
 			// StatusStrip
 			// 
 			this.StatusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-			this.StatusStrip.Location = new System.Drawing.Point(0, 578);
+			this.StatusStrip.Location = new System.Drawing.Point(0, 570);
 			this.StatusStrip.Name = "StatusStrip";
-			this.StatusStrip.Size = new System.Drawing.Size(800, 22);
+			this.StatusStrip.Size = new System.Drawing.Size(794, 22);
 			this.StatusStrip.TabIndex = 1;
 			// 
 			// lblBotStatus
@@ -201,8 +201,8 @@
 			// ViewContainer.Panel2
 			// 
 			this.ViewContainer.Panel2.Controls.Add(this.ServerTabs);
-			this.ViewContainer.Size = new System.Drawing.Size(800, 554);
-			this.ViewContainer.SplitterDistance = 266;
+			this.ViewContainer.Size = new System.Drawing.Size(794, 546);
+			this.ViewContainer.SplitterDistance = 264;
 			this.ViewContainer.TabIndex = 2;
 			// 
 			// tvServers
@@ -219,7 +219,7 @@
 			this.tvServers.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
 			this.tvServers.SelectedImageIndex = 0;
-			this.tvServers.Size = new System.Drawing.Size(260, 548);
+			this.tvServers.Size = new System.Drawing.Size(258, 540);
 			this.tvServers.TabIndex = 0;
 			// 
 			// treeImgList
@@ -243,7 +243,7 @@
 			this.ServerTabs.Location = new System.Drawing.Point(3, 3);
 			this.ServerTabs.Name = "ServerTabs";
 			this.ServerTabs.SelectedIndex = 0;
-			this.ServerTabs.Size = new System.Drawing.Size(524, 548);
+			this.ServerTabs.Size = new System.Drawing.Size(520, 540);
 			this.ServerTabs.TabIndex = 0;
 			// 
 			// InfoTab
@@ -263,7 +263,7 @@
 			this.InfoTab.Location = new System.Drawing.Point(4, 22);
 			this.InfoTab.Name = "InfoTab";
 			this.InfoTab.Padding = new System.Windows.Forms.Padding(3);
-			this.InfoTab.Size = new System.Drawing.Size(516, 522);
+			this.InfoTab.Size = new System.Drawing.Size(512, 514);
 			this.InfoTab.TabIndex = 0;
 			this.InfoTab.Text = "Info";
 			this.InfoTab.UseVisualStyleBackColor = true;
@@ -345,7 +345,7 @@
 			// 
 			this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblAddress.Location = new System.Drawing.Point(74, 38);
+			this.lblAddress.Location = new System.Drawing.Point(70, 38);
 			this.lblAddress.Name = "lblAddress";
 			this.lblAddress.Size = new System.Drawing.Size(436, 16);
 			this.lblAddress.TabIndex = 3;
@@ -365,7 +365,7 @@
 			// 
 			this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblName.Location = new System.Drawing.Point(74, 12);
+			this.lblName.Location = new System.Drawing.Point(70, 12);
 			this.lblName.Name = "lblName";
 			this.lblName.Size = new System.Drawing.Size(436, 16);
 			this.lblName.TabIndex = 1;
@@ -385,7 +385,7 @@
 			this.ActionTab.Location = new System.Drawing.Point(4, 22);
 			this.ActionTab.Name = "ActionTab";
 			this.ActionTab.Padding = new System.Windows.Forms.Padding(3);
-			this.ActionTab.Size = new System.Drawing.Size(516, 522);
+			this.ActionTab.Size = new System.Drawing.Size(512, 514);
 			this.ActionTab.TabIndex = 1;
 			this.ActionTab.Text = "Actions";
 			this.ActionTab.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@
 			this.ConsoleTab.Controls.Add(this.txtConsole);
 			this.ConsoleTab.Location = new System.Drawing.Point(4, 22);
 			this.ConsoleTab.Name = "ConsoleTab";
-			this.ConsoleTab.Size = new System.Drawing.Size(516, 522);
+			this.ConsoleTab.Size = new System.Drawing.Size(512, 514);
 			this.ConsoleTab.TabIndex = 2;
 			this.ConsoleTab.Text = "Console";
 			this.ConsoleTab.UseVisualStyleBackColor = true;
@@ -442,36 +442,38 @@
             this.ctxMnuEditServer,
             this.ctxMnuRemoveServer});
 			this.ctxServer.Name = "ctxServer";
-			this.ctxServer.Size = new System.Drawing.Size(134, 76);
-			// 
-			// ctxMnuEditServer
-			// 
-			this.ctxMnuEditServer.Name = "ctxMnuEditServer";
-			this.ctxMnuEditServer.Size = new System.Drawing.Size(133, 22);
-			this.ctxMnuEditServer.Text = "Edit";
-			// 
-			// ctxMnuRemoveServer
-			// 
-			this.ctxMnuRemoveServer.Name = "ctxMnuRemoveServer";
-			this.ctxMnuRemoveServer.Size = new System.Drawing.Size(133, 22);
-			this.ctxMnuRemoveServer.Text = "Remove";
+			this.ctxServer.Size = new System.Drawing.Size(153, 98);
 			// 
 			// ctxMnuDisConnect
 			// 
 			this.ctxMnuDisConnect.Name = "ctxMnuDisConnect";
-			this.ctxMnuDisConnect.Size = new System.Drawing.Size(133, 22);
+			this.ctxMnuDisConnect.Size = new System.Drawing.Size(152, 22);
 			this.ctxMnuDisConnect.Text = "Disconnect";
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(130, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+			// 
+			// ctxMnuEditServer
+			// 
+			this.ctxMnuEditServer.Name = "ctxMnuEditServer";
+			this.ctxMnuEditServer.Size = new System.Drawing.Size(152, 22);
+			this.ctxMnuEditServer.Text = "Edit";
+			this.ctxMnuEditServer.Click += new System.EventHandler(this.ctxMnuEditServer_Click);
+			// 
+			// ctxMnuRemoveServer
+			// 
+			this.ctxMnuRemoveServer.Name = "ctxMnuRemoveServer";
+			this.ctxMnuRemoveServer.Size = new System.Drawing.Size(152, 22);
+			this.ctxMnuRemoveServer.Text = "Remove";
+			this.ctxMnuRemoveServer.Click += new System.EventHandler(this.ctxMnuRemoveServer_Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 600);
+			this.ClientSize = new System.Drawing.Size(794, 592);
 			this.Controls.Add(this.ViewContainer);
 			this.Controls.Add(this.StatusStrip);
 			this.Controls.Add(this.MainMenu);
